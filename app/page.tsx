@@ -19,7 +19,7 @@ export default function LandingPage() {
 
             {/* Simple Footer */}
             <footer className="relative z-10 py-6 text-center text-sm text-gray-500 bg-white/50 backdrop-blur-sm border-t border-gray-100">
-                <p>© {new Date().getFullYear()} Stave. All rights reserved.</p>
+                <p>© {new Date().getFullYear()} Stave. All rights reserved. <span className="mx-2 text-gray-300">|</span> <a href="mailto:hello@stave.so" className="hover:text-gray-700 transition-colors">📧 hello@stave.so</a></p>
             </footer>
         </div>
     );

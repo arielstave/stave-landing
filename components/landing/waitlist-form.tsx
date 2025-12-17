@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Loader2 } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { subscribeUser } from '@/app/actions';
 
 export function WaitlistForm() {
     const [email, setEmail] = useState('');
@@ -20,21 +21,19 @@ export function WaitlistForm() {
         setError('');
 
         try {
-            const res = await fetch('/api/waitlist', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ email }),
-            });
+            const formData = new FormData();
+            formData.append('email', email);
 
-            if (!res.ok) throw new Error('Something went wrong.');
+            const result = await subscribeUser(formData);
 
-            setSuccess(true);
-            setEmail('');
+            if (result && result.success) {
+                setSuccess(true);
+                setEmail('');
+            } else {
+                throw new Error('Failed to join.');
+            }
         } catch (err) {
-            // Fallback for demo if API isn't real
             console.error(err);
-            // Simulate success for the demo if API fails (since user might not have set env var yet)
-            // But let's show error if it's a real failure
             setError('Failed to join. Please try again.');
         } finally {
             setLoading(false);
