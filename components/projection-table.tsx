@@ -59,7 +59,7 @@ export function ProjectionTable({ data, visible = false }: ProjectionTableProps)
 
                                     {/* Row Data */}
                                     {data.map((month) => {
-                                        // @ts-ignore
+                                        //
                                         const val = month[row.key];
                                         const isNegativeClosing = row.key === 'closing' && val < 0;
 

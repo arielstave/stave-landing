@@ -53,7 +53,7 @@ export function Hero() {
                     variants={{ hidden: { opacity: 0, y: 20 }, visible: { opacity: 1, y: 0 } }}
                     className="text-lg md:text-xl text-gray-500 max-w-2xl leading-relaxed font-medium"
                 >
-                    The text-first financial modeler for founders. Zero formulas.
+                    The text-first financial modeler for builders. Zero formulas.
                 </motion.p>
 
                 {/* Action Buttons */}

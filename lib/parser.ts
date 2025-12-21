@@ -128,7 +128,7 @@ export function parseStaveText(text: string): { commands: StaveCommand[], projec
     for (let i = 0; i < projectionMonths; i++) { // Dynamic Columns
         // Calculate actual date for this column
         let targetMonthIndex = startMonthIndex + i;
-        let targetYear = startYear + Math.floor(targetMonthIndex / 12);
+        const targetYear = startYear + Math.floor(targetMonthIndex / 12);
         targetMonthIndex = targetMonthIndex % 12;
 
         const monthName = MONTHS[targetMonthIndex];

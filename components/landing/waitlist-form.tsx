@@ -59,8 +59,8 @@ export function WaitlistForm() {
                         animate={{ opacity: 1, scale: 1 }}
                         className="p-6 bg-white rounded-xl border border-green-100 shadow-sm text-green-800"
                     >
-                        <h3 className="text-xl font-bold mb-2">You're on the list! 🎉</h3>
-                        <p className="text-green-700/80">We'll let you know when beta opens.</p>
+                        <h3 className="text-xl font-bold mb-2">You&apos;re on the list! 🎉</h3>
+                        <p className="text-green-700/80">We&apos;ll let you know when beta opens.</p>
                     </motion.div>
                 ) : (
                     <form onSubmit={handleSubmit} className="flex flex-col gap-4">
